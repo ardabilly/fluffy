@@ -1,0 +1,77 @@
+.cv-wrapper {
+  .cv-header {
+
+    // Nav
+    .cv-header-nav {
+
+    }
+
+    // Button
+    .previousYear {
+
+    }
+    .previousPeriod {
+
+    }
+    .nextPeriod {
+
+    }
+    .nextYear {
+
+    }
+    .currentPeriod {
+
+    }
+
+    // Label
+    .periodLabel {
+
+    }
+    .startMonth {
+
+    }
+    .startDay {
+
+    }
+    .startYear {
+
+    }
+    .endMonth {
+
+    }
+    .endDay {
+
+    }
+    .endYear {
+
+    }
+  }
+	.cv-header-days {
+
+		.cv-header-day {
+
+    }
+  }
+	.cv-weeks {
+		.cv-week {
+			.cv-day {
+
+        &.today {
+          color: red;
+        }
+				.cv-day-number {
+
+        }
+				.cv-event {
+
+					.startTime {
+
+          }
+					.endTime {
+
+          }
+        }
+      }
+    }
+  }
+}
