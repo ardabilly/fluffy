@@ -54,7 +54,12 @@
   }
 	.cv-weeks {
 		.cv-week {
+      flex-basis: auto;
+
 			.cv-day {
+        padding: 2rem;
+        flex-basis: auto;
+        font-size: 1.2rem;
 
         &.today {
           color: red;
