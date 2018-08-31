@@ -1,3 +1,6 @@
+$primary : #409EFF;
+$white : #FFFFFF;
+
 .cv-wrapper {
   .cv-header {
 
@@ -60,12 +63,16 @@
         padding: 2rem;
         flex-basis: auto;
         font-size: 1.2rem;
+        background-color: $white;
+        border: 0;
 
         &.today {
-          color: red;
+          background-color: $primary;
+          color: $white;
         }
 				.cv-day-number {
-
+          bottom: 0;
+          padding: .5rem 1rem;
         }
 				.cv-event {
 

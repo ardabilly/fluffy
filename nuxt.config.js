@@ -11,7 +11,8 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '//cdn.rawgit.com/necolas/normalize.css/master/normalize.css' }
+      { rel: 'stylesheet', type: 'text/css', href: '//cdn.rawgit.com/necolas/normalize.css/master/normalize.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css?family=Open+Sans:300,400|Playfair+Display:700' }
     ]
   },
   /*

@@ -1,12 +1,20 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+.title {
+  font-family: 'Playfair Display', serif;
+}
+
 .el-header, .el-footer {
-  background-color: #B3C0D1;
-  color: #333;
+  background-color: #409EFF;
+  color: #ffffff;
   text-align: center;
   line-height: 60px;
 }
 
 .el-aside {
-  background-color: #D3DCE6;
+  background-color: #ffffff;
   color: #333;
   text-align: center;
   line-height: 200px;
@@ -14,7 +22,7 @@
 }
 
 .el-main {
-  background-color: #E9EEF3;
+  background-color: #f8f9fb;
   color: #333;
   text-align: center;
 }
