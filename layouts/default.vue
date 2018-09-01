@@ -7,6 +7,17 @@
         <nuxt/>
       </el-main>
     </el-container>
-    <el-aside width="200px">Aside</el-aside>
+    <el-aside width="200px" v-if="isEnable">Aside</el-aside>
   </el-container>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      isEnable: false
+    }
+  }
+}
+</script>
+
