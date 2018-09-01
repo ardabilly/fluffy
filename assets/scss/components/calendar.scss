@@ -3,7 +3,7 @@ $white : #FFFFFF;
 
 .cv-wrapper {
   .cv-header {
-
+    border: 0;
     // Nav
     .cv-header-nav {
 
@@ -50,12 +50,15 @@ $white : #FFFFFF;
     }
   }
 	.cv-header-days {
+    border: 0;
 
 		.cv-header-day {
-
+      border: 0;
     }
   }
 	.cv-weeks {
+    border: 0;
+
 		.cv-week {
       flex-basis: auto;
 

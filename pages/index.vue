@@ -1,15 +1,10 @@
 <template>
-  <section>
+  <el-card>
 		<calendar-view
 			:show-date="showDate"
-			class="theme-default holiday-us-traditional holiday-us-official">
-			<calendar-view-header
-				slot="header"
-				slot-scope="t"
-				:header-props="t.headerProps"
-				@input="setShowDate" />
+			class="theme-default">
 		</calendar-view>
-  </section>
+  </el-card>
 </template>
 
 <script>
