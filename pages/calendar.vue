@@ -56,11 +56,29 @@
 			setDateType(d) {
 				this.displayPeriodUom = d
 			},
-			onDateClick(d) {
+			onDateClick(event) {
+				const hasEvents = this.getEvents(event)
+
+				console.log(hasEvents)
 				this.$store.commit('SET_EVENT_DETAIL', null)
 			},
 			onEventClick({ originalEvent }) {
 				this.$store.commit('SET_EVENT_DETAIL', originalEvent)
+			},
+			getEvents (date) {
+				const unique = new Date(date).getTime()
+				const { events } = this.$store.state
+				const bracket = []
+
+				events.map(item => {
+					const { startTimestamp, endTimestamp } = item
+
+					if (unique >= startTimestamp && unique <= endTimestamp) {
+						bracket.push(item)
+					}
+				})
+
+				return bracket
 			}
 		},
 		mounted () {

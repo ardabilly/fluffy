@@ -18,6 +18,8 @@ export const state = () => ({
     id: 1,
     startDate: '2018-9-1 00:00:00',
     endDate: '2018-9-2 00:00:00',
+    startTimestamp: 1535734800000,
+    endTimestamp: 1535821200000,
     title: 'First Event',
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
