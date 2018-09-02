@@ -12,7 +12,7 @@
         </div>
       </el-main>
     </el-container>
-    <el-aside width="350px" v-if="hasAside">
+    <el-aside width="400px" v-if="hasAside">
       <aside-detail />
     </el-aside>
   </el-container>
