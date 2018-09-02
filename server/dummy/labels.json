@@ -1,0 +1,16 @@
+[{
+  "text": "Standard",
+  "variant": "primary"
+}, {
+  "text": "Reminder",
+  "variant": "success"
+}, {
+  "text": "Information",
+  "variant": "info"
+}, {
+  "text": "Urgent",
+  "variant": "warning"
+}, {
+  "text": "Danger",
+  "variant": "danger"
+}]
