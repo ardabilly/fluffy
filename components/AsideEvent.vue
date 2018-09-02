@@ -28,7 +28,7 @@
       <div class="el-detail_title">Location</div>
       <div class="el-detail_location">
         <el-card shadow="never">
-          {{ event.location }}
+          {{ event.maps }}
         </el-card>
       </div>
     </div>
@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   computed: {
     event () {
@@ -51,6 +53,18 @@ export default {
   data () {
     return {
       value7: ''
+    }
+  },
+  watch: {
+    event (newValue) {
+      if (newValue) {
+        const { KEY_MAPS } = this.$store.state.api
+        axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${newValue.location.join(',')}&key=${KEY_MAPS}`).then(({data}) => {
+          
+          newValue['maps'] = data.results ? data.results[0] : {}
+          this.event = newValue
+        })
+      }
     }
   }
 }

@@ -1,4 +1,18 @@
+import axios from '~/plugins/axios'
+
+export const actions = {
+  async nuxtServerInit ({ commit }) {
+    try {
+      const { data } = await axios.get('/api/config')
+      commit('SET_CONFIG', data)
+    } catch (error) {
+      throw error
+    }
+  }
+}
+
 export const state = () => ({
+  api: {},
   aside: false,
   events: [{
     id: 1,
@@ -14,6 +28,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  SET_CONFIG (state, data) {
+    state.api = data
+  },
   SET_ASIDE (state, data) {
     state.aside = data
   },
