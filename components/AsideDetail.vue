@@ -1,6 +1,6 @@
 <template>
   <div class="el-detail">
-    <el-button icon="el-icon-back">Back</el-button>
+    <el-button icon="el-icon-back" @click="hideDetail">Close</el-button>
     <div class="line"></div>
     
     <!-- Detail events -->
@@ -53,6 +53,9 @@ export default {
     }
   },
   methods: {
+    hideDetail (event) {
+			this.$store.commit('SET_ASIDE', false)
+    },
     openDetail (event) {
 			this.$store.commit('SET_EVENT_DETAIL', event)
     },
