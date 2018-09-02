@@ -1,0 +1,21 @@
+.el-detail {
+  margin-top: 3rem;
+  padding: 0 2rem;
+  text-align: left;
+
+  span {
+    margin: 2px 3px;
+  }
+  &_title {
+    font-size: .75rem;
+    text-transform: uppercase;
+    line-height: 2;
+    color: #ABABAB;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
