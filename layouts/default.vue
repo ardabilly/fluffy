@@ -5,7 +5,7 @@
       <aside-menu />
     </el-aside>
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>Calendar</el-header>
       <el-main>
         <div class="el-main__content">
           <nuxt/>

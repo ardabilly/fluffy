@@ -36,16 +36,13 @@
 	export default {
 		data () {
 			return {
-				showDate: new Date(),
-				events: [{
-					id: 1,
-					startDate: '2018-9-1 20:00:00',
-					endDate: '2018-9-4 20:00:00',
-					title: 'foo',
-					url: '/',
-					tags: ['foo', 'bar']
-				}]
+				showDate: new Date()
       }
+		},
+		computed: {
+			events () {
+				return this.$store.state.events
+			}
 		},
 		methods: {
 			setShowDate(d) {
@@ -53,11 +50,21 @@
 				console.log(d)
 			},
 			onDateClick(d) {
-				console.log(d)
+				this.$store.commit('SET_EVENT_DETAIL', null)
 			},
-			onEventClick(d) {
-				console.log(d)
+			onEventClick({ originalEvent }) {
+				this.$store.commit('SET_EVENT_DETAIL', originalEvent)
 			}
+		},
+		mounted () {
+			this.$store.commit('SET_EVENT', {
+				id: 1,
+				startDate: '2018-9-1 20:00:00',
+				endDate: '2018-9-4 20:00:00',
+				title: 'foo',
+				url: '/',
+				tags: ['foo', 'bar']
+			})
 		}
 	}
 </script>

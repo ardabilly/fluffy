@@ -25,6 +25,7 @@ body {
   background-color: #f8f9fb;
   text-align: center;
   padding: 1rem 3rem;
+  transition: width .3s ease-in-out;
   
   .el-main__content {
     max-width: 720px;
