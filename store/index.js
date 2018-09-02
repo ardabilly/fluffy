@@ -14,6 +14,22 @@ export const actions = {
 export const state = () => ({
   api: {},
   aside: false,
+  labels: [{
+    text: 'Standard',
+    variant: 'primary'
+  }, {
+    text: 'Reminder',
+    variant: 'success'
+  }, {
+    text: 'Information',
+    variant: 'info'
+  }, {
+    text: 'Urgent',
+    variant: 'warning'
+  }, {
+    text: 'Danger',
+    variant: 'danger'
+  }],
   events: [{
     id: 1,
     startDate: '2018-9-1 00:00:00',
@@ -24,8 +40,8 @@ export const state = () => ({
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
     tags: [{
-      text: 'Sample',
-      variant: 'primary'
+      text: 'Information',
+      variant: 'info'
     }],
     location: [-6.1780807,106.8181091]
   }, {
@@ -38,10 +54,10 @@ export const state = () => ({
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
     tags: [{
-      text: 'Sample',
+      text: 'Standard',
       variant: 'primary'
     }, {
-      text: 'Sample',
+      text: 'Reminder',
       variant: 'success'
     }],
     location: [-6.1780807,106.8181091]
@@ -55,10 +71,10 @@ export const state = () => ({
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
     tags: [{
-      text: 'Sample',
+      text: 'Urgent',
       variant: 'warning'
     }, {
-      text: 'Sample',
+      text: 'Danger',
       variant: 'danger'
     }],
     location: [-6.1780807,106.8181091]
