@@ -74,6 +74,10 @@
 			// 	tags: ['Coding', 'On', 'Weekend'],
 			// 	location: [-6.1780807,106.8181091]
 			// })
+		},
+		beforeRouteLeave (to, from, next) {
+			this.$store.commit('SET_ASIDE', false)
+			next()
 		}
 	}
 </script>

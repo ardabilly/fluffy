@@ -14,10 +14,14 @@ export const state = () => ({
 })
 
 export const mutations = {
+  SET_ASIDE (state, data) {
+    state.aside = data
+  },
   SET_EVENT (state, data) {
     state.events.push(data)
   },
   SET_EVENT_DETAIL (state, data) {
+    state.aside = true
     state.eventDetail = data
   },
 }
