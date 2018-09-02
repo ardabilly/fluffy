@@ -16,7 +16,6 @@ body {
 .el-aside {
   background-color: #ffffff;
   text-align: center;
-  line-height: 200px;
   height: 100vh;
   box-shadow: 0 0px 20px rgba(78, 100, 121, 0.14);
   z-index: 1;
@@ -25,5 +24,10 @@ body {
 .el-main {
   background-color: #f8f9fb;
   text-align: center;
-  padding: 1rem 10rem;
+  padding: 1rem 4rem;
+  
+  .el-main__content {
+    max-width: 720px;
+    margin: 0 auto;
+  }
 }
