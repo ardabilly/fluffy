@@ -1,27 +1,32 @@
 <template>
 	<section>
-		<el-card shadow="never">
-			<el-row :gutter="20">
-				<el-col :span="8">
-					<el-button-group>
-						<el-button type="primary" size="small" icon="el-icon-arrow-left"></el-button>
-						<el-button type="primary" size="small" icon="el-icon-arrow-right"></el-button>
-					</el-button-group>
-					<el-button-group>
-						<el-button type="primary" size="small">Today</el-button>
-					</el-button-group>
-				</el-col>
-				<el-col :span="12" :offset="4">
-					<!-- Add some action here -->
-				</el-col>
-			</el-row>
-		</el-card>
-		<el-card>
-			<calendar-view
-				:show-date="showDate"
-				class="theme-default">
-			</calendar-view>
-		</el-card>
+		<calendar-view
+			:show-date="showDate"
+			@click-date="onDateClick"
+			class="theme-default">
+			<div
+				slot="header"
+				slot-scope="{ headerProps }"
+				class="cv-header"
+			>
+				<el-row :gutter="20">
+					<el-col :span="8">
+						<div class="cv-header_title">
+							{{ headerProps.periodLabel }}
+						</div>
+					</el-col>
+					<el-col :span="12" :offset="4">
+						<el-button-group>
+							<el-button type="primary" size="small" icon="el-icon-arrow-left" @click="setShowDate(headerProps.previousPeriod)"></el-button>
+							<el-button type="primary" size="small" icon="el-icon-arrow-right" @click="setShowDate(headerProps.nextPeriod)"></el-button>
+						</el-button-group>
+						<el-button-group>
+							<el-button type="primary" size="small" @click="setShowDate(headerProps.currentPeriod)">Today</el-button>
+						</el-button-group>
+					</el-col>
+				</el-row>
+			</div>
+		</calendar-view>
 	</section>
 </template>
 
@@ -35,23 +40,16 @@
 		methods: {
 			setShowDate(d) {
 				this.showDate = d
+				console.log(d)
+			},
+			onDateClick(d) {
+				console.log(d)
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
-	.el-card {
-		margin-bottom: 1rem;
-		
-		.el-button-group {
-			margin-right: .5rem;
-
-			&:last-child {
-				margin-right: 0;
-			}
-		}
-	}
   .el-row {
 		margin-bottom: 20px;
 

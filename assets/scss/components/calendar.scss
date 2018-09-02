@@ -3,79 +3,89 @@ $white : #FFFFFF;
 
 .cv-wrapper {
   .cv-header {
-    border: 0;
-    // Nav
-    .cv-header-nav {
+    display: block;
+    padding: 1rem 0;
+    transition: .3s;
+    color: #303133;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
 
+    button {
+      border-color: transparent;
     }
+    .el-button-group {
+			margin-right: .5rem;
 
-    // Button
-    .previousYear {
-
+			&:last-child {
+				margin-right: 0;
+			}
     }
-    .previousPeriod {
-
-    }
-    .nextPeriod {
-
-    }
-    .nextYear {
-
-    }
-    .currentPeriod {
-
-    }
-
-    // Label
-    .periodLabel {
-
-    }
-    .startMonth {
-
-    }
-    .startDay {
-
-    }
-    .startYear {
-
-    }
-    .endMonth {
-
-    }
-    .endDay {
-
-    }
-    .endYear {
-
+    &_title {
+      text-transform: uppercase;
+      line-height: 35px;
+      font-weight: 600;
+      text-align: left;
+      padding-left: 30px;
     }
   }
 	.cv-header-days {
     border: 0;
 
+    padding: 1rem 0;
+    transition: .3s;
+    color: #303133;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #fff;
+
 		.cv-header-day {
       border: 0;
+      color: #ABABAB;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: .8rem;
     }
   }
 	.cv-weeks {
     border: 0;
 
+    transition: .3s;
+    color: #303133;
+    padding: 0;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border-top: 0;
+    background-color: #fff;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
 		.cv-week {
       flex-basis: auto;
 
 			.cv-day {
-        padding: 2rem;
+        padding: 2.5rem;
         flex-basis: auto;
-        font-size: 1.2rem;
+        font-size: 1rem;
         background-color: $white;
         border: 0;
+        border-bottom: 1px solid #ebeef5;
 
+        &.outsideOfMonth {
+          background-color: #EDEDED;
+        }
         &.today {
           background-color: $primary;
           color: $white;
         }
 				.cv-day-number {
           bottom: 0;
-          padding: .5rem 1rem;
+          padding: 1rem;
         }
 				.cv-event {
 
@@ -86,6 +96,9 @@ $white : #FFFFFF;
 
           }
         }
+      }
+      &:last-child .cv-day {
+        border-bottom: 0;
       }
     }
   }
