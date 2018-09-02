@@ -23,7 +23,10 @@ export const state = () => ({
     title: 'First Event',
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
-    tags: ['Coding', 'On', 'Weekend'],
+    tags: [{
+      text: 'Sample',
+      variant: 'primary'
+    }],
     location: [-6.1780807,106.8181091]
   }, {
     id: 2,
@@ -34,7 +37,13 @@ export const state = () => ({
     title: 'Second Event',
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
-    tags: ['Coding', 'On', 'Weekend'],
+    tags: [{
+      text: 'Sample',
+      variant: 'primary'
+    }, {
+      text: 'Sample',
+      variant: 'success'
+    }],
     location: [-6.1780807,106.8181091]
   }, {
     id: 3,
@@ -45,7 +54,13 @@ export const state = () => ({
     title: 'Third Event',
     description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
     url: '/',
-    tags: ['Coding', 'On', 'Weekend'],
+    tags: [{
+      text: 'Sample',
+      variant: 'warning'
+    }, {
+      text: 'Sample',
+      variant: 'danger'
+    }],
     location: [-6.1780807,106.8181091]
   }],
   eventList: null,

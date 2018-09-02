@@ -11,16 +11,26 @@
     <section v-else>
 
       <!-- Have events -->
-      <section v-if="events.length > 0">
-        <el-card v-for="event in events" :key="event.key">
+      <div v-if="events.length > 0">
+        <el-card
+          class="card-item"
+          shadow="never"
+          v-for="event in events"
+          :key="event.key"
+          :style="setGradient(event.tags)"
+          @click.native="openDetail(event)"
+        >
           <p>{{ event.title }}</p>
           <p>{{ event.startDate }}</p>
         </el-card>
-      </section>
+      </div>
       
       <!-- Add events -->
       <section v-else>
-        Add events
+        <el-card align="center" shadow="never">
+          <p>This date doesn't have any Events</p>
+          <el-button type="primary" icon="el-icon-plus">Create One</el-button>
+        </el-card>
       </section>
 
     </section>
@@ -41,7 +51,51 @@ export default {
     detail () {
       return this.$store.state.eventDetail
     }
+  },
+  methods: {
+    openDetail (event) {
+			this.$store.commit('SET_EVENT_DETAIL', event)
+    },
+    setGradient (tags) {
+      const color = {
+        primary: 'rgba(64, 158, 255, .8)',
+        success: 'rgba(103, 194, 58, .8)',
+        info: 'rgba(153, 186, 253, .8)',
+        warning: 'rgba(230, 162, 60, .8)',
+        danger: 'rgba(245, 108, 108, .8)'
+      }
+      const grad = []
+      
+      tags.map(item => {
+        if (color[item.variant]) {
+          grad.push(color[item.variant])
+        }
+      })
+
+      if (grad.length > 1) {
+        return `
+          background: ${grad[0]};
+          background: -webkit-linear-gradient(to left, ${grad[1]}, ${grad[0]});
+          background: linear-gradient(to left, ${grad[1]}, ${grad[0]});
+          color: #FFFFFF;
+        `
+      } else {
+        return `
+          background-color: ${grad[0]};
+          color: #FFFFFF;
+        `
+      }
+    }
   }
 }
 </script>
+
+<style>
+.el-card.card-item {
+  margin-bottom: .5rem;
+  border: 0;
+  cursor: pointer;
+  user-select: none;
+}
+</style>
 

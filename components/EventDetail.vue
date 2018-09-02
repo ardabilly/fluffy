@@ -20,8 +20,8 @@
     </div>
     <div class="el-detail_title">Label</div>
     <div class="el-detail_label">
-      <el-tag v-for="tag in event.tags" :key="tag.key">
-        {{ tag }}
+      <el-tag :type="tag.variant" v-for="tag in event.tags" :key="tag.key">
+        {{ tag.text }}
       </el-tag>
     </div>
     <div class="el-detail_title">Location</div>
