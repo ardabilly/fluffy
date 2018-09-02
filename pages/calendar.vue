@@ -59,8 +59,7 @@
 			onDateClick(event) {
 				const hasEvents = this.getEvents(event)
 
-				console.log(hasEvents)
-				this.$store.commit('SET_EVENT_DETAIL', null)
+				this.$store.commit('SET_EVENT_LIST', hasEvents)
 			},
 			onEventClick({ originalEvent }) {
 				this.$store.commit('SET_EVENT_DETAIL', originalEvent)

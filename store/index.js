@@ -26,6 +26,7 @@ export const state = () => ({
     tags: ['Coding', 'On', 'Weekend'],
     location: [-6.1780807,106.8181091]
   }],
+  eventList: null,
   eventDetail: null
 })
 
@@ -38,6 +39,11 @@ export const mutations = {
   },
   SET_EVENT (state, data) {
     state.events.push(data)
+  },
+  SET_EVENT_LIST (state, data) {
+    state.aside = true
+    state.eventList = data
+    state.eventDetail = null
   },
   SET_EVENT_DETAIL (state, data) {
     state.aside = true
