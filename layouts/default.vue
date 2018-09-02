@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-aside width="300px">
+    <el-aside width="250px">
       <aside-user />
       <aside-menu />
     </el-aside>
@@ -12,7 +12,7 @@
         </div>
       </el-main>
     </el-container>
-    <el-aside width="400px" v-if="isEnable">
+    <el-aside width="350px" v-if="isEnable">
       <aside-event />
     </el-aside>
   </el-container>
