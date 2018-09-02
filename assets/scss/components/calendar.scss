@@ -33,7 +33,6 @@ $white : #FFFFFF;
   }
 	.cv-header-days {
     border: 0;
-
     padding: 1rem 0;
     transition: .3s;
     color: #303133;
@@ -45,17 +44,21 @@ $white : #FFFFFF;
 
 		.cv-header-day {
       border: 0;
-      color: #ABABAB;
+      border-right: 1px solid #ebeef5;
+      color: #ccd2df;
       font-weight: 400;
       text-transform: uppercase;
       font-size: .8rem;
+
+      &:last-child {
+        border: 0;
+      }
     }
   }
 	.cv-weeks {
     border: 0;
 
     transition: .3s;
-    color: #303133;
     padding: 0;
     border: 1px solid #ebeef5;
     border-radius: 4px;
@@ -74,28 +77,41 @@ $white : #FFFFFF;
         font-size: 1rem;
         background-color: $white;
         border: 0;
+        color: #465064;
         border-bottom: 1px solid #ebeef5;
 
         &.outsideOfMonth {
-          background-color: #EDEDED;
+          color: #ccd2df;
         }
         &.today {
-          background-color: $primary;
-          color: $white;
+
+          .cv-day-number {
+            background-color: $primary;
+            color: $white;
+          }
         }
 				.cv-day-number {
-          bottom: 0;
-          padding: 1rem;
+          bottom: 4px;
+          right: 0;
+          padding: 0;
+          width: 35px;
+          height: 25px;
+          display: flex;
+          font-size: 0.9rem;
+          text-align: center;
+          border-radius: 4px;
+          align-items: center;
+          justify-content: center;
         }
-				.cv-event {
-
-					.startTime {
-
-          }
-					.endTime {
-
-          }
-        }
+      }
+      .cv-event {
+        background-color: rgba(64, 158, 255, .1);
+        color: #409EFF;
+        border-radius: 4px;
+        border: 1px solid rgba(64, 158, 255, .2);
+        font-size: 0.9rem;
+        line-height: 14px;
+        padding: .2rem 0;
       }
       &:last-child .cv-day {
         border-bottom: 0;

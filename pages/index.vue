@@ -2,7 +2,9 @@
 	<section>
 		<calendar-view
 			:show-date="showDate"
+			:events="events"
 			@click-date="onDateClick"
+			@click-event="onEventClick"
 			class="theme-default">
 			<div
 				slot="header"
@@ -34,7 +36,15 @@
 	export default {
 		data () {
 			return {
-        showDate: new Date()
+				showDate: new Date(),
+				events: [{
+					id: 1,
+					startDate: '2018-9-1 20:00:00',
+					endDate: '2018-9-4 20:00:00',
+					title: 'foo',
+					url: '/',
+					tags: ['foo', 'bar']
+				}]
       }
 		},
 		methods: {
@@ -43,6 +53,9 @@
 				console.log(d)
 			},
 			onDateClick(d) {
+				console.log(d)
+			},
+			onEventClick(d) {
 				console.log(d)
 			}
 		}
