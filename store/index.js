@@ -25,6 +25,28 @@ export const state = () => ({
     url: '/',
     tags: ['Coding', 'On', 'Weekend'],
     location: [-6.1780807,106.8181091]
+  }, {
+    id: 2,
+    startDate: '2018-9-10 00:00:00',
+    endDate: '2018-9-13 00:00:00',
+    startTimestamp: 1536512400000,
+    endTimestamp: 1536771600000,
+    title: 'Second Event',
+    description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
+    url: '/',
+    tags: ['Coding', 'On', 'Weekend'],
+    location: [-6.1780807,106.8181091]
+  }, {
+    id: 3,
+    startDate: '2018-9-10 00:00:00',
+    endDate: '2018-9-11 00:00:00',
+    startTimestamp: 1536512400000,
+    endTimestamp: 1536598800000,
+    title: 'Third Event',
+    description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
+    url: '/',
+    tags: ['Coding', 'On', 'Weekend'],
+    location: [-6.1780807,106.8181091]
   }],
   eventList: null,
   eventDetail: null
