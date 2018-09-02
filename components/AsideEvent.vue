@@ -33,16 +33,8 @@
       </div>
     </div>
     <div v-else>
-      Select event on calendar
-      <el-date-picker
-        v-model="value7"
-        type="daterange"
-        align="right"
-        unlink-panels
-        range-separator="To"
-        start-placeholder="Start date"
-        end-placeholder="End date">
-      </el-date-picker>
+      <p>This date doesn't have any events</p>
+      <el-button type="primary" size="small">Create One <i class="el-icon-plus"></i></el-button>
     </div>
   </section>
 </template>

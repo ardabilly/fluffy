@@ -15,6 +15,7 @@ $white : #FFFFFF;
 
     button {
       border-color: transparent;
+      font-size: 12px;
     }
     .el-button-group {
 			margin-right: .5rem;
@@ -25,7 +26,7 @@ $white : #FFFFFF;
     }
     &_title {
       text-transform: uppercase;
-      line-height: 35px;
+      line-height: 30px;
       font-weight: 600;
       text-align: left;
       padding-left: 30px;
