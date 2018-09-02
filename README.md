@@ -1,4 +1,4 @@
-![Preview](static/preview.jpg)
+![Preview](static/preview-app.jpg)
 
 # fluffy
 
