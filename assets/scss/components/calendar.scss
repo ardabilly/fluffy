@@ -16,19 +16,18 @@ $white : #FFFFFF;
     button {
       border-color: transparent;
       font-size: 12px;
-    }
-    .el-button-group {
-			margin-right: .5rem;
+      margin: 0 2px;
 
-			&:last-child {
-				margin-right: 0;
-			}
+      &:last-child {
+        margin-right: 0;
+      }
     }
     &_title {
       text-transform: uppercase;
       line-height: 30px;
       font-weight: 600;
       padding-left: 30px;
+      font-size: .9rem;
     }
   }
 	.cv-header-days {

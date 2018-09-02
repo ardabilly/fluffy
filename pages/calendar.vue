@@ -19,17 +19,15 @@
 							<el-button type="primary" size="small" icon="el-icon-arrow-right" @click="setShowDate(headerProps.nextPeriod)"></el-button>
 						</el-button-group>
 					</el-col>
-					<el-col :span="11">
+					<el-col :span="10">
 						<div class="cv-header_title">
 							{{ headerProps.periodLabel }}
 						</div>
 					</el-col>
-					<el-col :span="8">
-						<el-button-group>
-							<el-button type="primary" size="small" @click="setShowDate(headerProps.currentPeriod)">Today</el-button>
-							<el-button type="primary" size="small" @click="setDateType('week')">Week</el-button>
-							<el-button type="primary" size="small" @click="setDateType('month')">Month</el-button>
-						</el-button-group>
+					<el-col :span="9">
+						<el-button plain type="success" size="small" @click="setShowDate(headerProps.currentPeriod)">Today</el-button>
+						<el-button plain type="primary" size="small" @click="setDateType('week')">Week</el-button>
+						<el-button plain type="primary" size="small" @click="setDateType('month')">Month</el-button>
 					</el-col>
 				</el-row>
 			</div>
