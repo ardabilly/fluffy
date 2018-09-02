@@ -1,4 +1,5 @@
 export const state = () => ({
+  aside: false,
   events: [{
     id: 1,
     startDate: '2018-9-1 00:00:00',

@@ -12,7 +12,7 @@
         </div>
       </el-main>
     </el-container>
-    <el-aside width="350px" v-if="isEnable">
+    <el-aside width="350px" v-if="hasAside">
       <aside-event />
     </el-aside>
   </el-container>
@@ -29,9 +29,9 @@ export default {
     'aside-user': AsideUser,
     'aside-menu': AsideMenu
   },
-  data () {
-    return {
-      isEnable: true
+  computed: {
+    hasAside () {
+      return this.$store.state.aside
     }
   }
 }
