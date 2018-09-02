@@ -1,3 +1,5 @@
+![Preview](static/preview.jpg)
+
 # fluffy
 
 > Event management dashboard
