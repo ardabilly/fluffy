@@ -13,19 +13,19 @@
       </el-main>
     </el-container>
     <el-aside width="350px" v-if="hasAside">
-      <aside-event />
+      <aside-detail />
     </el-aside>
   </el-container>
 </template>
 
 <script>
-import AsideEvent from '~/components/AsideEvent.vue'
+import AsideDetail from '~/components/AsideDetail.vue'
 import AsideUser from '~/components/AsideUser.vue'
 import AsideMenu from '~/components/AsideMenu.vue'
 
 export default {
   components: {
-    'aside-event': AsideEvent,
+    'aside-detail': AsideDetail,
     'aside-user': AsideUser,
     'aside-menu': AsideMenu
   },
