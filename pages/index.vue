@@ -2,6 +2,7 @@
 	<section>
 		<calendar-view
 			:show-date="showDate"
+			:display-period-uom="displayPeriodUom"
 			:events="events"
 			@click-date="onDateClick"
 			@click-event="onEventClick"
@@ -12,18 +13,22 @@
 				class="cv-header"
 			>
 				<el-row :gutter="20">
-					<el-col :span="8">
-						<div class="cv-header_title">
-							{{ headerProps.periodLabel }}
-						</div>
-					</el-col>
-					<el-col :span="12" :offset="4">
+					<el-col :span="5">
 						<el-button-group>
 							<el-button type="primary" size="small" icon="el-icon-arrow-left" @click="setShowDate(headerProps.previousPeriod)"></el-button>
 							<el-button type="primary" size="small" icon="el-icon-arrow-right" @click="setShowDate(headerProps.nextPeriod)"></el-button>
 						</el-button-group>
+					</el-col>
+					<el-col :span="11">
+						<div class="cv-header_title">
+							{{ headerProps.periodLabel }}
+						</div>
+					</el-col>
+					<el-col :span="8">
 						<el-button-group>
 							<el-button type="primary" size="small" @click="setShowDate(headerProps.currentPeriod)">Today</el-button>
+							<el-button type="primary" size="small" @click="setDateType('week')">Week</el-button>
+							<el-button type="primary" size="small" @click="setDateType('month')">Month</el-button>
 						</el-button-group>
 					</el-col>
 				</el-row>
@@ -36,7 +41,8 @@
 	export default {
 		data () {
 			return {
-				showDate: new Date()
+				showDate: new Date(),
+				displayPeriodUom: 'month'
       }
 		},
 		computed: {
@@ -48,6 +54,9 @@
 			setShowDate(d) {
 				this.showDate = d
 				console.log(d)
+			},
+			setDateType(d) {
+				this.displayPeriodUom = d
 			},
 			onDateClick(d) {
 				this.$store.commit('SET_EVENT_DETAIL', null)
