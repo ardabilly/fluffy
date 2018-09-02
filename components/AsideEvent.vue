@@ -34,6 +34,15 @@
     </div>
     <div v-else>
       Select event on calendar
+      <el-date-picker
+        v-model="value7"
+        type="daterange"
+        align="right"
+        unlink-panels
+        range-separator="To"
+        start-placeholder="Start date"
+        end-placeholder="End date">
+      </el-date-picker>
     </div>
   </section>
 </template>
@@ -43,6 +52,11 @@ export default {
   computed: {
     event () {
       return this.$store.state.eventDetail
+    }
+  },
+  data () {
+    return {
+      value7: ''
     }
   }
 }
