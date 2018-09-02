@@ -58,7 +58,6 @@ $white : #FFFFFF;
   }
 	.cv-weeks {
     border: 0;
-
     transition: .3s;
     padding: 0;
     border: 1px solid #ebeef5;
@@ -73,14 +72,21 @@ $white : #FFFFFF;
       flex-basis: auto;
 
 			.cv-day {
+        border: 0;
         padding: 2.5rem;
         flex-basis: auto;
+        border-bottom: 1px solid #ebeef5;
+        transition: all .3s ease-in-out;
         font-size: 1rem;
         background-color: $white;
-        border: 0;
         color: #465064;
-        border-bottom: 1px solid #ebeef5;
+        cursor: pointer;
 
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: rgba(64, 158, 255, .1);
+        }
         &.outsideOfMonth {
           color: #ccd2df;
         }
@@ -107,12 +113,21 @@ $white : #FFFFFF;
       }
       .cv-event {
         background-color: rgba(64, 158, 255, .1);
-        color: #409EFF;
-        border-radius: 4px;
         border: 1px solid rgba(64, 158, 255, .2);
+        transition: all .3s ease-in-out;
+        border-radius: 4px;
         font-size: 0.9rem;
         line-height: 14px;
+        color: #409EFF;
         padding: .2rem 0;
+        cursor: pointer;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: rgba(64, 158, 255, .2);
+          border: 1px solid rgba(64, 158, 255, .4);
+        }
       }
       &:last-child .cv-day {
         border-bottom: 0;
