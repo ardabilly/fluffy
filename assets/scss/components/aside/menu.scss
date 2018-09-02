@@ -1,5 +1,10 @@
 .el-menu {
   border-right: 0;
+
+  .el-menu-item {
+    text-align: left;
+    padding-left: 30px !important;
+  }
 }
 .el-submenu {
   &__title {
