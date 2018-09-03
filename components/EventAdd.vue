@@ -1,23 +1,41 @@
 <template>
   <section>
-    <!-- Form -->
-    <el-button type="text" @click="dialogFormVisible = true">open a Form nested Dialog</el-button>
-
-    <el-dialog title="Shipping address" :visible.sync="dialogFormVisible">
+    <el-dialog title="Create Event" :visible="dialogVisible">
       <el-form :model="form">
-        <el-form-item label="Promotion name" :label-width="formLabelWidth">
-          <el-input v-model="form.name" auto-complete="off"></el-input>
+        <el-form-item label="Title">
+          <el-input v-model="form.title" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="Zones" :label-width="formLabelWidth">
-          <el-select v-model="form.region" placeholder="Please select a zone">
-            <el-option label="Zone No.1" value="shanghai"></el-option>
-            <el-option label="Zone No.2" value="beijing"></el-option>
-          </el-select>
+        <el-form-item label="Description">
+          <el-input v-model="form.description" auto-complete="off"></el-input>
         </el-form-item>
+        <el-form-item label="Date">
+          <el-date-picker
+            v-model="form.dateRange"
+            type="daterange"
+            range-separator="To"
+            start-placeholder="Start date"
+            end-placeholder="End date">
+          </el-date-picker>
+        </el-form-item>
+        <el-collapse v-model="activeIndex" accordion>
+          <el-collapse-item title="Advance" name="1">
+            <el-form-item label="Url">
+              <el-input v-model="form.url" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="Location">
+              <el-input v-model="form.location" auto-complete="off"></el-input>
+            </el-form-item>
+            <el-form-item label="Labels">
+              <el-select v-model="form.tags" multiple collapse-tags placeholder="Please select a labels">
+                <el-option :label="label.text" :value="key" v-for="(label, key) in labels" :key="key"></el-option>
+              </el-select>
+            </el-form-item>
+          </el-collapse-item>
+        </el-collapse>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">Confirm</el-button>
+        <el-button @click="closeDialog">Cancel</el-button>
+        <el-button type="primary" @click="closeDialog">Confirm</el-button>
       </span>
     </el-dialog>
   </section>
@@ -25,39 +43,38 @@
 
 <script>
   export default {
+    computed: {
+      dialog () {
+        return this.$store.state.eventAdd
+      },
+      labels () {
+        return this.$store.state.labels
+      }
+    },
     data() {
       return {
-        gridData: [{
-          date: '2016-05-02',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
-        }, {
-          date: '2016-05-04',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
-        }, {
-          date: '2016-05-01',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
-        }, {
-          date: '2016-05-03',
-          name: 'John Smith',
-          address: 'No.1518,  Jinshajiang Road, Putuo District'
-        }],
-        dialogTableVisible: false,
-        dialogFormVisible: false,
+        activeIndex: null,
         form: {
-          name: '',
-          region: '',
-          date1: '',
-          date2: '',
-          delivery: false,
-          type: [],
-          resource: '',
-          desc: ''
+          url: '',
+          tags: [],
+          title: '',
+          description: '',
+          dateRange: '',
+          location: []
         },
-        formLabelWidth: '120px'
+        formLabelWidth: '180px',
+        dialogVisible: false
       };
+    },
+    watch: {
+      dialog (newValue) {
+        this.dialogVisible = newValue
+      }
+    },
+    methods: {
+      closeDialog () {
+        this.$store.commit('SET_EVENT_DIALOG', false)
+      }
     }
   };
 </script>

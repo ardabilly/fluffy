@@ -28,6 +28,7 @@ export const state = () => ({
   aside: false,
   labels: [],
   events: [],
+  eventAdd: false,
   eventList: null,
   eventDetail: null
 })
@@ -47,6 +48,9 @@ export const mutations = {
   },
   SET_EVENT (state, data) {
     state.events.push(data)
+  },
+  SET_EVENT_DIALOG (state, data) {
+    state.eventAdd = data
   },
   SET_EVENT_LIST (state, data) {
     state.aside = true

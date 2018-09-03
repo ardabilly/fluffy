@@ -23,13 +23,15 @@
           <p>{{ event.title }}</p>
           <p>{{ event.startDate }}</p>
         </el-card>
+        <div class="line"></div>
+        <el-button type="primary" icon="el-icon-plus" @click="openDialog">Create New</el-button>
       </div>
       
       <!-- Add events -->
       <section v-else>
         <el-card align="center" shadow="never">
           <p>This date doesn't have any Events</p>
-          <el-button type="primary" icon="el-icon-plus">Create One</el-button>
+          <el-button type="primary" icon="el-icon-plus" @click="openDialog">Create One</el-button>
         </el-card>
       </section>
 
@@ -58,6 +60,9 @@ export default {
     },
     openDetail (event) {
 			this.$store.commit('SET_EVENT_DETAIL', event)
+    },
+    openDialog () {
+			this.$store.commit('SET_EVENT_DIALOG', true)
     },
     setGradient (tags) {
       const color = {

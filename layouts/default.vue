@@ -15,6 +15,7 @@
     <el-aside width="400px" v-if="hasAside">
       <aside-detail />
     </el-aside>
+    <event-add />
   </el-container>
 </template>
 
@@ -22,12 +23,14 @@
 import AsideDetail from '~/components/AsideDetail.vue'
 import AsideUser from '~/components/AsideUser.vue'
 import AsideMenu from '~/components/AsideMenu.vue'
+import EventAdd from '~/components/EventAdd.vue'
 
 export default {
   components: {
     'aside-detail': AsideDetail,
     'aside-user': AsideUser,
-    'aside-menu': AsideMenu
+    'aside-menu': AsideMenu,
+    'event-add': EventAdd
   },
   computed: {
     hasAside () {
