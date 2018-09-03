@@ -14,6 +14,7 @@
             style="width: 100%;"
             v-model="form.dateRange"
             type="daterange"
+            :unlink-panels="true"
             range-separator="To"
             start-placeholder="Start date"
             end-placeholder="End date">
@@ -54,6 +55,9 @@
 <script>
   export default {
     computed: {
+      events () {
+        return this.$store.state.eventList
+      },
       dialog () {
         return this.$store.state.eventAdd
       },
@@ -69,7 +73,7 @@
           tags: [],
           title: '',
           description: '',
-          dateRange: '',
+          dateRange: [],
           location: ''
         },
         dialogVisible: false
@@ -78,6 +82,15 @@
     watch: {
       dialog (newValue) {
         this.dialogVisible = newValue
+      },
+      events (newValue) {
+        if (newValue.date) {
+          console.log(newValue.date)
+          this.form.dateRange[0] = new Date(newValue.date)
+          this.form.dateRange[1] = new Date(newValue.date)
+
+          console.log('this.form', this.form)
+        }
       }
     },
     methods: {
@@ -87,11 +100,12 @@
           tags: [],
           title: '',
           description: '',
-          dateRange: '',
+          dateRange: [],
           location: ''
         }
       },
       closeDialog () {
+        this.resetEvent()
         this.$store.commit('SET_EVENT_DIALOG', false)
       },
       saveEvent () {
@@ -119,7 +133,7 @@
         this.$store.commit('SET_EVENT_DIALOG', false)
       }
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

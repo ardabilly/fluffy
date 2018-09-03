@@ -11,11 +11,11 @@
     <section v-else>
 
       <!-- Have events -->
-      <div v-if="events.length > 0">
+      <div v-if="events['events'].length > 0">
         <el-card
           class="card-item"
           shadow="never"
-          v-for="event in events"
+          v-for="event in events['events']"
           :key="event.key"
           :style="setGradient(event.tags)"
           @click.native="openDetail(event)"

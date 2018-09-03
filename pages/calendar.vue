@@ -71,7 +71,10 @@
 			onDateClick(event) {
 				const hasEvents = this.getEvents(event)
 
-				this.$store.commit('SET_EVENT_LIST', hasEvents)
+				this.$store.commit('SET_EVENT_LIST', {
+					events: hasEvents,
+					date: event
+				})
 			},
 			getEvents (date) {
 				const unique = new Date(date).getTime()
