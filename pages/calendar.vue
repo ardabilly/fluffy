@@ -31,6 +31,14 @@
 					</el-col>
 				</el-row>
 			</div>
+			<div
+				slot="dayContent"
+				slot-scope="day"
+				v-if="getEvents(day.day).length > 1"
+				class="cv-day-info"
+			>
+				{{ getEvents(day.day).length }} events
+			</div>
 		</calendar-view>
 	</section>
 </template>

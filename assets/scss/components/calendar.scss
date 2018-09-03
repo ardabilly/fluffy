@@ -73,17 +73,57 @@ $white : #FFFFFF;
         border: 0;
         padding: 2.5rem;
         flex-basis: auto;
+        border-right: 1px solid #ebeef5;
         border-bottom: 1px solid #ebeef5;
         transition: background-color .3s ease-in-out;
         font-size: 1rem;
         background-color: $white;
         color: #465064;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
 
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: 10;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: #ffffff;
+          background: -webkit-linear-gradient(to bottom, transparent, #ffffff);
+          background: linear-gradient(to bottom, transparent, #ffffff);
+        }
+        &:nth-child(7) {
+          border-right: 0;
+        }
         &:hover,
         &:focus,
         &:active {
           background-color: rgba(64, 158, 255, .1);
+        }
+				.cv-day-number {
+          bottom: 4px;
+          right: 0;
+          padding: 0;
+          width: 35px;
+          height: 25px;
+          z-index: 11;
+          display: flex;
+          font-size: 0.9rem;
+          text-align: center;
+          border-radius: 4px;
+          align-items: center;
+          justify-content: center;
+        }
+        .cv-day-info {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          font-size: .65rem;
+          z-index: 11;
+          color: #7c8ba8;
         }
         &.outsideOfMonth {
           color: #ccd2df;
@@ -93,20 +133,8 @@ $white : #FFFFFF;
           .cv-day-number {
             background-color: $primary;
             color: $white;
+            right: 10px;
           }
-        }
-				.cv-day-number {
-          bottom: 4px;
-          right: 0;
-          padding: 0;
-          width: 35px;
-          height: 25px;
-          display: flex;
-          font-size: 0.9rem;
-          text-align: center;
-          border-radius: 4px;
-          align-items: center;
-          justify-content: center;
         }
       }
       .cv-event {
