@@ -5,7 +5,6 @@
         label-position="left"
         ref="form-event-add"
         label-width="120px"
-        model="form"
       >
         <el-form-item label="Title">
           <el-input v-model="form.title" placeholder="Write title here ..."></el-input>
@@ -73,7 +72,6 @@
           dateRange: '',
           location: ''
         },
-        formLabelWidth: '180px',
         dialogVisible: false
       };
     },
@@ -97,6 +95,26 @@
         this.$store.commit('SET_EVENT_DIALOG', false)
       },
       saveEvent () {
+        const data = this.form
+        const { events } = this.$store.state
+        const event = {
+          id: events.length + 1,
+          startDate: new Date(data.dateRange[0].toString()).toISOString(),
+          endDate: new Date(data.dateRange[1].toString()).toISOString(),
+          startTimestamp: new Date(data.dateRange[0].toString()).getTime(),
+          endTimestamp: new Date(data.dateRange[1].toString()).getTime(),
+          title: data.title,
+          description: data.description,
+          url: data.url,
+          tags: [],
+          location: data.location
+        }
+
+        data.tags.map((item, index) => {
+          event.tags[index] = this.labels[item]
+        })
+
+        this.$store.commit('SET_EVENT', event)
         this.resetEvent()
         this.$store.commit('SET_EVENT_DIALOG', false)
       }

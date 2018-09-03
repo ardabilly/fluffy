@@ -3,7 +3,7 @@
 		<calendar-view
 			:show-date="showDate"
 			:display-period-uom="displayPeriodUom"
-			:events="events"
+			:events="eventList"
 			@click-date="onDateClick"
 			class="theme-default">
 			<div
@@ -47,7 +47,8 @@
 		data () {
 			return {
 				showDate: new Date(),
-				displayPeriodUom: 'month'
+				displayPeriodUom: 'month',
+				eventList: []
       }
 		},
 		computed: {
@@ -55,10 +56,14 @@
 				return this.$store.state.events
 			}
 		},
+		watch: {
+			events (newValue) {
+				this.eventList = newValue
+			}
+		},
 		methods: {
 			setShowDate(d) {
 				this.showDate = d
-				console.log(d)
 			},
 			setDateType(d) {
 				this.displayPeriodUom = d
@@ -85,16 +90,7 @@
 			}
 		},
 		mounted () {
-			// this.$store.commit('SET_EVENT', {
-			// 	id: 1,
-			// 	startDate: '2018-9-1 00:00:00',
-			// 	endDate: '2018-9-2 00:00:00',
-			// 	title: 'First Event',
-			// 	description: 'Learn and create something on weekend, cause we can\'t wasting a time.',
-			// 	url: '/',
-			// 	tags: ['Coding', 'On', 'Weekend'],
-			// 	location: [-6.1780807,106.8181091]
-			// })
+			this.eventList = this.events
 		},
 		beforeRouteLeave (to, from, next) {
 			this.$store.commit('SET_ASIDE', false)

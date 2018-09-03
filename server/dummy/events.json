@@ -1,7 +1,7 @@
 [{
   "id": 1,
-  "startDate": "2018-9-1 00:00:00",
-  "endDate": "2018-9-2 00:00:00",
+  "startDate": "2018-09-1T17:00:00.000Z",
+  "endDate": "2018-09-2T17:00:00.000Z",
   "startTimestamp": 1535734800000,
   "endTimestamp": 1535821200000,
   "title": "First Event",
@@ -14,8 +14,8 @@
   "location": [-6.1780807,106.8181091]
 }, {
   "id": 2,
-  "startDate": "2018-9-10 00:00:00",
-  "endDate": "2018-9-13 00:00:00",
+  "startDate": "2018-09-10T17:00:00.000Z",
+  "endDate": "2018-09-13T17:00:00.000Z",
   "startTimestamp": 1536512400000,
   "endTimestamp": 1536771600000,
   "title": "Second Event",
@@ -31,8 +31,8 @@
   "location": [-6.1780807,106.8181091]
 }, {
   "id": 3,
-  "startDate": "2018-9-10 00:00:00",
-  "endDate": "2018-9-11 00:00:00",
+  "startDate": "2018-09-10T17:00:00.000Z",
+  "endDate": "2018-09-11T17:00:00.000Z",
   "startTimestamp": 1536512400000,
   "endTimestamp": 1536598800000,
   "title": "Third Event",
