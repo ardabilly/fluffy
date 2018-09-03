@@ -5,7 +5,6 @@
 			:display-period-uom="displayPeriodUom"
 			:events="events"
 			@click-date="onDateClick"
-			@click-event="onEventClick"
 			class="theme-default">
 			<div
 				slot="header"
@@ -68,9 +67,6 @@
 				const hasEvents = this.getEvents(event)
 
 				this.$store.commit('SET_EVENT_LIST', hasEvents)
-			},
-			onEventClick({ originalEvent }) {
-				this.$store.commit('SET_EVENT_DETAIL', originalEvent)
 			},
 			getEvents (date) {
 				const unique = new Date(date).getTime()
