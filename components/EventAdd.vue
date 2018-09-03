@@ -1,15 +1,18 @@
 <template>
   <section>
-    <el-dialog title="Create Event" :visible="dialogVisible">
-      <el-form :model="form">
+    <el-dialog width="40%" title="Create Event" :visible="dialogVisible">
+      <el-form
+        label-position="left"
+        ref="form-event-add"
+        label-width="120px"
+        model="form"
+      >
         <el-form-item label="Title">
-          <el-input v-model="form.title" auto-complete="off"></el-input>
+          <el-input v-model="form.title" placeholder="Write title here ..."></el-input>
         </el-form-item>
-        <el-form-item label="Description">
-          <el-input v-model="form.description" auto-complete="off"></el-input>
-        </el-form-item>
-        <el-form-item label="Date">
+        <el-form-item label="Dates">
           <el-date-picker
+            style="width: 100%;"
             v-model="form.dateRange"
             type="daterange"
             range-separator="To"
@@ -17,18 +20,26 @@
             end-placeholder="End date">
           </el-date-picker>
         </el-form-item>
+        <el-form-item label="Description">
+          <el-input type="textarea" rows="4" v-model="form.description" placeholder="Some description of event ..."></el-input>
+        </el-form-item>
         <el-collapse v-model="activeIndex" accordion>
-          <el-collapse-item title="Advance" name="1">
-            <el-form-item label="Url">
-              <el-input v-model="form.url" auto-complete="off"></el-input>
-            </el-form-item>
-            <el-form-item label="Location">
-              <el-input v-model="form.location" auto-complete="off"></el-input>
-            </el-form-item>
+          <el-collapse-item title="Advance Options?" name="1">
+            <div class="line"></div>
             <el-form-item label="Labels">
               <el-select v-model="form.tags" multiple collapse-tags placeholder="Please select a labels">
                 <el-option :label="label.text" :value="key" v-for="(label, key) in labels" :key="key"></el-option>
               </el-select>
+            </el-form-item>
+            <el-form-item label="External URL">
+              <el-input v-model="form.url">
+                <template slot="prepend">https://</template>
+              </el-input>
+            </el-form-item>
+            <el-form-item label="Locations">
+              <el-card shadow="never">
+                Google maps
+              </el-card>
             </el-form-item>
           </el-collapse-item>
         </el-collapse>
@@ -60,7 +71,7 @@
           title: '',
           description: '',
           dateRange: '',
-          location: []
+          location: ''
         },
         formLabelWidth: '180px',
         dialogVisible: false
@@ -78,3 +89,14 @@
     }
   };
 </script>
+
+<style lang="scss" scoped>
+.el-collapse .el-collapse-item__content {
+  padding-bottom: 0;
+}
+.line {
+  border-bottom: 1px solid #ebeef5;
+  margin-bottom: 1rem;
+}
+</style>
+

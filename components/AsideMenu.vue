@@ -14,7 +14,7 @@
       <el-menu-item index="/setting/app">Application</el-menu-item>
       <el-menu-item index="/setting/account">Account</el-menu-item>
     </el-submenu>
-    <el-menu-item index="/">Sign Out</el-menu-item>
+    <el-menu-item index="/"><i class="el-icon-back"></i>Sign Out</el-menu-item>
   </el-menu>
 </template>
 
