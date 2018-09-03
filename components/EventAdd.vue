@@ -46,7 +46,7 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="closeDialog">Cancel</el-button>
-        <el-button type="primary" @click="closeDialog">Confirm</el-button>
+        <el-button type="primary" @click="saveEvent">Create</el-button>
       </span>
     </el-dialog>
   </section>
@@ -83,7 +83,21 @@
       }
     },
     methods: {
+      resetEvent () {
+        this.form = {
+          url: '',
+          tags: [],
+          title: '',
+          description: '',
+          dateRange: '',
+          location: ''
+        }
+      },
       closeDialog () {
+        this.$store.commit('SET_EVENT_DIALOG', false)
+      },
+      saveEvent () {
+        this.resetEvent()
         this.$store.commit('SET_EVENT_DIALOG', false)
       }
     }
